@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "restart hook jboss"
+export JAVA_OPTS_EXT=" -javaagent:/var/lib/openshift/$OPENSHIFT_APP_UUID/app-root/repository/newrelic/newrelic.jar "
+echo $JAVA_OPTS_EXT
