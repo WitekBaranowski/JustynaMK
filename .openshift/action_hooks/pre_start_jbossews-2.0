@@ -1,4 +1,8 @@
 #!/bin/bash
 echo "start hook jboss"
-export _JAVA_OPTIONS="$_JAVA_OPTIONS -javaagent:/var/lib/openshift/$OPENSHIFT_APP_UUID/app-root/repo/newrelic/newrelic.jar"
-echo $_JAVA_OPTIONS
+
+#export _JAVA_OPTIONS="$_JAVA_OPTIONS -javaagent:$OPENSHIFT_REPO_DIR/newrelic/newrelic.jar"
+
+export _JAVA_OPTIONS="$_JAVA_OPTIONS -javaagent:$OPENSHIFT_REPO_DIR/AppServerAgent/javaagent.jar"
+
+export _JAVA_OPTIONS="$_JAVA_OPTIONS -Dappdynamics.agent.socket.no.local.bind=true"
