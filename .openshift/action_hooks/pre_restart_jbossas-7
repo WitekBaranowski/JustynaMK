@@ -1,2 +1,2 @@
 #!/bin/bash
-export _JAVA_OPTIONS="$_JAVA_OPTIONS -javaagent:/var/lib/openshift/{hash}/app-root/repo/newrelic/newrelic.jar"
+export _JAVA_OPTIONS="$_JAVA_OPTIONS -javaagent:/var/lib/openshift/545aa21d5973ca3dfa00041a/app-root/repo/newrelic/newrelic.jar"
