@@ -24,7 +24,7 @@
     examples for a business application name can be 'ACME Portal' if you are monitoring the portal application or 'ACME ECommerce' etc.
     If a business application of this name does not exist it will be created automatically.
     This can be overridden with the system property '-Dappdynamics.agent.applicationName' -->
-    <application-name>Mary Kay JNowak</application-name>
+    <application-name>MaryKayJNowak</application-name>
 
     <!-- Specify the logical business tier this node belongs to.
     examples for a business tier can be 'ACME Frontend' or 'ACME Backend Service' etc. If your JVM / AppServer start up script already
