@@ -1,0 +1,10 @@
+script: true
+deploy:
+  provider: openshift
+  user: wbaranowski
+  password:
+    secure: oW39vLZnI9Nyu4TZENXlBBt8BN8l9fvlm2YOySPw0NE1GJu87q32MdJdHKysyopmvHWrKODO7nz+VIC0xNoalX3bCROyqnr5uNncZAZtlsVpxR9cUurbfPPGIrO89QQC7ggplrec2U0P3BZVXCVJsjoT+Z79rcEtqnnHsyTfB/M=
+  app: JustynaMK
+  domain: digitaldreamwb
+  on:
+    repo: WitekBaranowski/JustynaMK
