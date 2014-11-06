@@ -47,6 +47,7 @@
                         <version>2.3</version>
                         <configuration>
                             <failOnMissingWebXml>false</failOnMissingWebXml>
+                            <warName>ROOT</warName>
                             <outputDirectory>${env.TOMCAT_HOME}/webapps</outputDirectory>
                         </configuration>
                     </plugin>
@@ -55,6 +56,9 @@
         </profile>
         <profile>
             <id>openshift</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <build>
                 <finalName>justynamk</finalName>
                 <plugins>
