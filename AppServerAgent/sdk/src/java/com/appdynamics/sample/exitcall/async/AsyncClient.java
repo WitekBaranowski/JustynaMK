@@ -58,8 +58,8 @@ public class AsyncClient
     /**
      * The POJO Rule defines the sayHelloAsync method as the transaction boundary.
      * The method looks up the remote rmi server object and invokes the remote method
-     * @throws java.rmi.RemoteException
-     * @throws java.rmi.NotBoundException
+     * @throws RemoteException
+     * @throws NotBoundException
      * @throws InterruptedException
      */
     public void sayHelloAsync() throws RemoteException, NotBoundException, InterruptedException
@@ -73,7 +73,7 @@ public class AsyncClient
      * Marks the begin and end of the remote server call
      * @param asyncServer
      * @return
-     * @throws java.rmi.RemoteException
+     * @throws RemoteException
      */
     private void invokeServerAsync(IAsyncServer asyncServer) throws RemoteException
     {

@@ -21,6 +21,15 @@
         </filter>
     </appender>
 
+    <appender name="DynamicServiceLogger" class="com.singularity.util.org.apache.log4j.AppDynamicsRollingFileAppender">
+        <param name="File" value="dynamic-service.log"/>
+        <param name="MaxFileSize" value="5000KB"/>
+        <param name="MaxBackupIndex" value="5"/>
+        <layout class="com.singularity.util.org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%t] %d{DATE} %5p %c - %m%n"/>
+        </layout>
+    </appender>
+
     <appender name="RESTLogger" class="com.singularity.util.org.apache.log4j.AppDynamicsRollingFileAppender">
         <param name="File" value="REST.log"/>
         <param name="MaxFileSize" value="5000KB"/>
@@ -55,6 +64,11 @@
     <logger name="com.singularity.BusinessTransactions" additivity="false">
         <level value="info"/>
         <appender-ref ref="BusinessTransactionsLogger"/>
+    </logger>
+
+    <logger name="com.singularity.dynamicservice" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="DynamicServiceLogger"/>
     </logger>
 
     <root>

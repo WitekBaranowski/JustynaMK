@@ -58,8 +58,8 @@ public class SyncClient
     /**
      * The POJO Rule defines the sayHello method as the transaction boundary.
      * The method looks up the remote rmi server object and invokes the remote method
-     * @throws java.rmi.RemoteException
-     * @throws java.rmi.NotBoundException
+     * @throws RemoteException
+     * @throws NotBoundException
      * @throws InterruptedException
      */
     public void sayHello() throws RemoteException, NotBoundException, InterruptedException
@@ -74,7 +74,7 @@ public class SyncClient
      * Marks the begin and end of the remote server call
      * @param server
      * @return
-     * @throws java.rmi.RemoteException
+     * @throws RemoteException
      */
     private String invokeServer(ISyncServer server) throws RemoteException
     {

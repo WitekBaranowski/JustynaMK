@@ -17,14 +17,14 @@
     <!-- This specifies if the AppDynamics agent should use SSL(HTTPS) to connect to the Controller. If you set this to true,
     the controller port property above should be set to the HTTPs port of the Controller.
     This can be overridden with the system property '-Dappdynamics.controller.ssl.enabled' -->
-    <controller-ssl-enabled>false</controller-ssl-enabled>
+    <controller-ssl-enabled>true</controller-ssl-enabled>
     
     <!-- Specify the logical business application name that this jvm node belongs to.
     Note that this is not the deployment name(ear/war/jar) on the application server.
     examples for a business application name can be 'ACME Portal' if you are monitoring the portal application or 'ACME ECommerce' etc.
     If a business application of this name does not exist it will be created automatically.
     This can be overridden with the system property '-Dappdynamics.agent.applicationName' -->
-    <application-name>MaryKayJNowak</application-name>
+    <application-name>JustynaMK</application-name>
 
     <!-- Specify the logical business tier this node belongs to.
     examples for a business tier can be 'ACME Frontend' or 'ACME Backend Service' etc. If your JVM / AppServer start up script already
@@ -40,7 +40,7 @@
     The value specified in this xml can be overridden with the system property '-Dappdynamics.agent.nodeName'.
     You may also use expressions as ${server.name}_${host.name}.MyNode to define the node name.
     -->
-    <node-name>OpenShift Node</node-name>
+    <node-name>Node 555e</node-name>
     
     <!-- Refers to the runtime directory for all runtime files (logs, transaction configuration) for agent nodes using this agent
     installation. The property is optional, by default set to agent-installation-directory . If specified All Agent logs are written
@@ -61,9 +61,9 @@
     <account-name>DigitalDream</account-name>
     <account-access-key>yumxwqexaz99</account-access-key>
 
-
     <!-- Change to 'true' only under special circumstances where this agent has been moved to a new application and/or tier
     from the UI but you want to override that move by specifying a new application name and/or tier name in the agent configuration. -->
     <force-agent-registration>false</force-agent-registration>
+    
 
 </controller-info>

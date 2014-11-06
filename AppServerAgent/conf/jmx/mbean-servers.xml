@@ -22,6 +22,7 @@
     <server mbean-server-name="Apache Cassandra 0.7.0" mbean-name-pattern="org.apache.cassandra.db:*" config-file="servers/cassandra-0.7.0-jmx-config.xml" />
     <server mbean-server-name="Apache Cassandra 0.7.0" mbean-name-pattern="org.apache.cassandra.request:*" config-file="servers/cassandra-0.7.0-jmx-config.xml" />
     <server mbean-server-name="Apache Cassandra 0.7.0" mbean-name-pattern="org.apache.cassandra.internal:*" config-file="servers/cassandra-0.7.0-jmx-config.xml" />
+    <server mbean-server-name="Oracle Coherence 3.7.1" mbean-name-pattern="Coherence:type=Cluster" version-attribute="Version" version-startsWith="3.7.1" config-file="servers/deadbeaf_depricated_feature.xml" />
     <!-- If you are using Platform MBean server to report activemq metrics then you may uncomment the following line.
     -->
     <!--

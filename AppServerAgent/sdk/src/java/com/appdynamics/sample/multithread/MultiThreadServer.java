@@ -118,7 +118,7 @@ public class MultiThreadServer
     /**
      * The input param specifies the no of times the
      * @param args loop count
-     * @throws java.io.IOException
+     * @throws IOException
      * @throws InterruptedException
      */
     public static void main(String[] args) throws IOException, InterruptedException

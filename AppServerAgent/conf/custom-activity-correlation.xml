@@ -33,50 +33,25 @@
                 <class-name></class-name>
                 <method-name></method-name>
                 <match-type></match-type>
-                <method-parameter-types></method-parameter-types>
+                <param-types></param-types>
             </instrumentation>
-            <exit-point-definition resolve="false">
-                <display-name-config>
-                    <data-gatherer-config>
-                        <name></name>
-                        <data-gatherer-type>INVOKED|RETURN|POSITION</data-gatherer-type>
-                        <field-name></field-name>
-                        <user-defined-name></user-defined-name>
-                        <getter-chain></getter-chain>
-                        <position></position>
-                        <transformer-type>TO_STRING|SIMPLE_CLASS_NAME|FIELD_NAME|GETTER_METHODS|USER_DEFINED_NAME
-                        </transformer-type>
-                    </data-gatherer-config>
-                </display-name-config>
+            <identifiers>
                 <identifier>
-                    <data-gatherer-config>
-                        <name></name>
-                        <data-gatherer-type>INVOKED|RETURN|POSITION</data-gatherer-type>
-                        <field-name></field-name>
-                        <user-defined-name></user-defined-name>
-                        <getter-chain></getter-chain>
-                        <position></position>
-                        <transformer-type>TO_STRING|SIMPLE_CLASS_NAME|FIELD_NAME|GETTER_METHODS|USER_DEFINED_NAME
-                        </transformer-type>
-                    </data-gatherer-config>
-                    <filter>
-                        <naming-options>
-                            <name></name>
-                            <value></value>
-                        </naming-options>
-                        <naming-actions>
-                            <name></name>
-                            <value></value>
-                        </naming-actions>
-                    </filter>
+                    <name></name>
+                    <data-gatherer-type>INVOKED|RETURN|POSITION</data-gatherer-type>
+                    <field-name></field-name>
+                    <user-defined-name></user-defined-name>
+                    <getter-chain></getter-chain>
+                    <position></position>
+                    <transformer-type>TO_STRING|SIMPLE_CLASS_NAME|FIELD_NAME|GETTER_METHODS|USER_DEFINED_NAME</transformer-type>
                 </identifier>
-            </exit-point-definition>
+            </identifiers>
             <correlation>
                 <instrumentation>
                     <class-name></class-name>
                     <method-name></method-name>
                     <match-type></match-type>
-                    <method-parameter-types></method-parameter-types>
+                    <param-types></param-types>
                 </instrumentation>
                 <payload-pointer>
                     <data-gatherer-config>
@@ -89,17 +64,6 @@
                         <transformer-type>TO_STRING|SIMPLE_CLASS_NAME|FIELD_NAME|GETTER_METHODS|USER_DEFINED_NAME
                         </transformer-type>
                     </data-gatherer-config>
-                    <filter>
-                        <name></name>
-                        <naming-options>
-                            <name></name>
-                            <value></value>
-                        </naming-options>
-                        <naming-actions>
-                            <name></name>
-                            <value></value>
-                        </naming-actions>
-                    </filter>
                 </payload-pointer>
                 <payload-operation>
                     <access-type>field|method|getter-chain</access-type>
@@ -130,14 +94,14 @@
                 <class-name></class-name>
                 <method-name></method-name>
                 <match-type></match-type>
-                <method-parameter-types></method-parameter-types>
+                <param-types></param-types>
             </instrumentation>
             <correlation entry-on-different-thread="true">
                 <instrumentation>
                     <class-name></class-name>
                     <method-name></method-name>
                     <match-type></match-type>
-                    <method-parameter-types></method-parameter-types>
+                    <param-types></param-types>
                 </instrumentation>
                 <payload-pointer>
                     <data-gatherer-config>
@@ -150,46 +114,12 @@
                         <transformer-type>TO_STRING|SIMPLE_CLASS_NAME|FIELD_NAME|GETTER_METHODS|USER_DEFINED_NAME
                         </transformer-type>
                     </data-gatherer-config>
-                    <filter>
-                        <name></name>
-                        <naming-options>
-                            <name></name>
-                            <value></value>
-                        </naming-options>
-                        <naming-actions>
-                            <name></name>
-                            <value></value>
-                        </naming-actions>
-                    </filter>
                 </payload-pointer>
                 <payload-operation>
                     <access-type>field|method|getter-chain</access-type>
                     <param-types>String|Object</param-types>
                     <access-methods></access-methods>
                 </payload-operation>
-                <correlation-payload-info-mapping-config>
-                    <data-gatherer-config>
-                        <name></name>
-                        <data-gatherer-type>INVOKED|RETURN|POSITION</data-gatherer-type>
-                        <field-name></field-name>
-                        <user-defined-name></user-defined-name>
-                        <getter-chain></getter-chain>
-                        <position></position>
-                        <transformer-type>TO_STRING|SIMPLE_CLASS_NAME|FIELD_NAME|GETTER_METHODS|USER_DEFINED_NAME
-                        </transformer-type>
-                    </data-gatherer-config>
-                    <filter>
-                        <name></name>
-                        <naming-options>
-                            <name></name>
-                            <value></value>
-                        </naming-options>
-                        <naming-actions>
-                            <name></name>
-                            <value></value>
-                        </naming-actions>
-                    </filter>
-                </correlation-payload-info-mapping-config>
             </correlation>
         </consumer>
 
