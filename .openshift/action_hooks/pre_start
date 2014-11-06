@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "start hook"
-export _JAVA_OPTIONS="$_JAVA_OPTIONS -javaagent:/var/lib/openshift/545aa21d5973ca3dfa00041a/app-root/repo/newrelic/newrelic.jar"
-echo $_JAVA_OPTIONS
+export JAVA_OPTS_EXT=" -javaagent:/var/lib/openshift/$OPENSHIFT_APP_UUID/app-root/repository/newrelic/newrelic.jar "
+echo $JAVA_OPTS_EXT
