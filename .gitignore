@@ -9,6 +9,7 @@ node_modules
 .tmp
 .merge_file*
 .sass-cache
+webapps
 .DS_Store
 src/main/webapp/dist
 .gradle
