@@ -1,4 +1,7 @@
-script: true
+language: java
+jdk:
+  - openjdk7
+  - oraclejdk7
 deploy:
   provider: openshift
   user: wbaranowski
