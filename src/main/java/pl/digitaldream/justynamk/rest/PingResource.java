@@ -1,4 +1,4 @@
-package pl.digitaldream.rest;
+package pl.digitaldream.justynamk.rest;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;

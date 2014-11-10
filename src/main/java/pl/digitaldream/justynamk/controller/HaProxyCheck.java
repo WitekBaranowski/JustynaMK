@@ -1,4 +1,4 @@
-package pl.digitaldream.controller;
+package pl.digitaldream.justynamk.controller;
 
 
 import org.springframework.http.HttpStatus;

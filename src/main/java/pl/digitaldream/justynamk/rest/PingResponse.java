@@ -1,4 +1,4 @@
-package pl.digitaldream.rest;
+package pl.digitaldream.justynamk.rest;
 
 public class PingResponse {
 
