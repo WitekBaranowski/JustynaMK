@@ -1,6 +1,8 @@
 package pl.digitaldream.justynamk.controller;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +23,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RestController
 @RequestMapping(value = "/user", produces = APPLICATION_JSON_VALUE)
 public class UserController {
-
+    private final Logger log = LoggerFactory.getLogger(UserController.class);
     @Autowired
     UserRepository userRepository;
 
@@ -32,6 +34,7 @@ public class UserController {
 
     @RequestMapping(method = POST)
     public ResponseEntity<User> create(@RequestBody @Valid User user) {
+        log.info("save");
         user = userRepository.save(user);
         return new ResponseEntity<>(user, CREATED);
     }
