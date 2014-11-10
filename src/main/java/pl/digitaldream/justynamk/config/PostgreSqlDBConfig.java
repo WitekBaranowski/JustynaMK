@@ -40,7 +40,7 @@ public class PostgreSqlDBConfig {
         String url = "jdbc:postgresql://" + host + ":" + port + "/"+databaseName;
 
         HikariConfig config = new HikariConfig();
-        config.setDataSourceClassName("org.postgresql.Driver");
+        config.setDataSourceClassName("org.postgresql.ds.PGPoolingDataSource");
         config.addDataSourceProperty("url", url);
         config.addDataSourceProperty("user", username);
         config.addDataSourceProperty("password", password);
