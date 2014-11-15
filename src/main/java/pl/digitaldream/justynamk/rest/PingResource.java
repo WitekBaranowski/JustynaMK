@@ -12,7 +12,7 @@ public class PingResource {
 	
 	@RequestMapping(method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody PingResponse ping(){
-		return new PingResponse("It works!!");
+		return new PingResponse("It works!! ");
 	}
 	
 
