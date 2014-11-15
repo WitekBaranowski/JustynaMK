@@ -31,7 +31,7 @@
         <!-- Dates -->
         <jodatime-hibernate.version>1.3</jodatime-hibernate.version>
         <jodatime.version>2.5</jodatime.version>
-
+        <usertype-core.version>3.2.0.GA</usertype-core.version>
 
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
@@ -56,6 +56,10 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
         </dependency>
 
 
@@ -88,6 +92,10 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
 
 
         <!--Validation-->
@@ -107,6 +115,11 @@
             <artifactId>joda-time-hibernate</artifactId>
             <version>${jodatime-hibernate.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jadira.usertype</groupId>
+            <artifactId>usertype.core</artifactId>
+            <version>${usertype-core.version}</version>
+        </dependency>
 
         <!--Tests-->
         <dependency>
@@ -115,11 +128,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.assertj</groupId>
@@ -129,8 +137,20 @@
         </dependency>
 
     </dependencies>
-
-
+    <build>
+        <plugins>
+            <plugin>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-maven-plugin</artifactId>
+            <version>3.0</version>
+            <configuration>
+                <user>postgres</user>
+                <password>admin</password>
+                <url>jdbc:postgresql://localhost:5432/marykay</url>
+            </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
@@ -138,6 +158,12 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+            <properties>
+                <!-- log configuration -->
+                <logback.loglevel>DEBUG</logback.loglevel>
+                <!-- Spring profile to use -->
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
             <build>
                 <finalName>justynamk</finalName>
                 <plugins>
@@ -154,7 +180,12 @@
         </profile>
         <profile>
             <id>openshift</id>
-
+            <properties>
+                <!-- log configuration -->
+                <logback.loglevel>INFO</logback.loglevel>
+                <!-- Spring profile to use -->
+                <spring.profiles.active>openshift</spring.profiles.active>
+            </properties>
             <build>
                 <finalName>justynamk</finalName>
                 <plugins>

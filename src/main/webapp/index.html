@@ -4,8 +4,8 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+<html  ng-app="marykayApp">
+	<head >
 		<title>Mary Kay Justyna Nowak</title>
 
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -15,12 +15,24 @@
         	<script src="/resources/css/ie/html5shiv.js"></script>
 		<![endif]-->
 		<script src="/resources/js/jquery.min.js"></script>
+		<script src="/resources/js/moment.min.js"></script>
 		<script src="/resources/js/jquery.poptrox.min.js"></script>
 		<script src="/resources/js/jquery.scrolly.min.js"></script>
 		<script src="/resources/js/jquery.scrollgress.min.js"></script>
 		<script src="/resources/js/skel.min.js"></script>
 		<script src="/resources/js/init.js"></script>
 		<script src="/resources/js/newrelic.js"></script>
+
+		<script src="/resources/js/fullcalendar.min.js"></script>
+		<script src="/resources/js/calendar.js"></script>
+
+		<script src="/resources/js/angular.min.js"></script>
+		<script src="/resources/js/angular-resource.min.js"></script>
+
+		<script src="/resources/js/app.js"></script>
+
+		<link rel="stylesheet" href="/resources/css/fullcalendar.min.css" />
+
 		<noscript>
 			<link rel="stylesheet" href="/resources/css/skel.css" />
 			<link rel="stylesheet" href="/resources/css/style.css" />
@@ -117,6 +129,25 @@
 							</div>
 						</div>
 
+				</div>
+			</section>
+			<section id="calendar-section" class="main style3 secondary">
+				<div class="content container" ng-controller="callendarController">
+
+					<button ng-click="bookingsData.fetchBookings(item, $event)">Pobierz rezerwacje</button>
+
+					<br/>
+					<table class="table table-striped">
+						<tr ng-repeat="booking in bookingsData.bookings">
+							<td><a href="/booking/{{booking.id}}">{{booking.email}}</a></td>
+							<td>{{booking.reservationStart}}</td>
+							<td>{{booking.reservationEnd}}</td>
+						</tr>
+					</table>
+					<header>
+						<h2>Rezerwacje</h2>
+					</header>
+					<div id="calendar"></div>
 				</div>
 			</section>
 			

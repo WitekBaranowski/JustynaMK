@@ -1,0 +1,6 @@
+
+
+jdbc:
+  username: postgres
+  password: admin
+  url: jdbc:postgresql://localhost:5432/marykay

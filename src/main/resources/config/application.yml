@@ -1,0 +1,27 @@
+
+
+spring:
+   jpa:
+      hibernate:
+         ddl-auto: update
+      show-sql: true
+
+
+
+
+
+
+
+#
+#
+#
+#
+#---
+#spring:
+#    profiles: production
+#jdbc:
+#  username: systemEnvironment['HOME']
+#  password: systemEnvironment['HOME']
+#  url: systemEnvironment['HOME']
+
+

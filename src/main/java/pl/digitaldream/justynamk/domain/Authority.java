@@ -13,7 +13,6 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "T_AUTHORITY")
-
 public class Authority implements Serializable {
 
     @NotNull

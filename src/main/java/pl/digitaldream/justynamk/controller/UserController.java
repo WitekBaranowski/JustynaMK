@@ -34,7 +34,6 @@ public class UserController {
 
     @RequestMapping(method = POST)
     public ResponseEntity<User> create(@RequestBody @Valid User user) {
-        log.info("save");
         user = userRepository.save(user);
         return new ResponseEntity<>(user, CREATED);
     }

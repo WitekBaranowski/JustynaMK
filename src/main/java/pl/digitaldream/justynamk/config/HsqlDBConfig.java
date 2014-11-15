@@ -13,7 +13,7 @@ import pl.digitaldream.justynamk.ApplicationWebXml;
 import javax.sql.DataSource;
 
 @Configuration
-@Profile({"in-memory","dev"})
+@Profile({"in-memory"})
 @EnableJpaRepositories("pl.digitaldream.justynamk.repository")
 public class HsqlDBConfig {
     private final Logger log = LoggerFactory.getLogger(ApplicationWebXml.class);
