@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.digitaldream.justynamk.domain.Booking;
+import pl.digitaldream.justynamk.domain.enums.ReservationStatus;
+import pl.digitaldream.justynamk.dto.BookingDTO;
 import pl.digitaldream.justynamk.repository.BookingRepository;
+import pl.digitaldream.justynamk.service.BookingService;
 
 import javax.validation.Valid;
 
@@ -26,30 +29,32 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping(value = "/booking", produces = APPLICATION_JSON_VALUE)
 public class BookingController {
     private final Logger log = LoggerFactory.getLogger(BookingController.class);
+
     @Autowired
-    BookingRepository bookingRepository;
+    private BookingService bookingService;
 
     @RequestMapping(method = GET)
-    public ResponseEntity<List<Booking>> findAll() {
-        return new ResponseEntity<>(bookingRepository.findAll(), OK);
+    public ResponseEntity<List<BookingDTO>> findAll() {
+        return new ResponseEntity<>(bookingService.findAll(), OK);
     }
 
     @RequestMapping(method = GET, value = "/{id}")
-    public ResponseEntity<Booking> get(@PathVariable(value = "id") Integer id) {
-        return new ResponseEntity<>(bookingRepository.findOne(id), OK);
+    public ResponseEntity<BookingDTO> get(@PathVariable(value = "id") Integer id) {
+        return new ResponseEntity<>(bookingService.findOne(id), OK);
     }
 
 
     @RequestMapping(method = POST)
-    public ResponseEntity<Booking> create(@RequestBody @Valid Booking booking) {
-        booking = bookingRepository.save(booking);
+    public ResponseEntity<BookingDTO> create(@RequestBody @Valid BookingDTO booking) {
+        booking.setStatus(ReservationStatus.PENDING);
+        booking = bookingService.save(booking);
         return new ResponseEntity<>(booking, CREATED);
     }
 
     @RequestMapping(method = DELETE, value = "{id}")
     public ResponseEntity<String> delete(@PathVariable Integer id) {
 
-        bookingRepository.delete(id);
+        bookingService.delete(id);
         return new ResponseEntity<>(String.format("%s has been deleted", id), OK);
     }
 

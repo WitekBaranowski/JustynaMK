@@ -17,9 +17,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Arrays;
 
-/**
- * Created by Witek on 2014-11-10.
- */
 
 @Configuration
 @Profile({"openshift","local"})

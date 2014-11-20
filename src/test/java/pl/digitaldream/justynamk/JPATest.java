@@ -1,7 +1,6 @@
 package pl.digitaldream.justynamk;
 
 
-import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,6 +11,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
+import org.springframework.transaction.annotation.Transactional;
 import pl.digitaldream.justynamk.domain.Booking;
 import pl.digitaldream.justynamk.domain.User;
 import pl.digitaldream.justynamk.domain.enums.ReservationStatus;
@@ -26,7 +26,8 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ApplicationConfig.class)
-@ActiveProfiles("local")
+@ActiveProfiles("in-memory")
+@Transactional
 public class JPATest {
 
     @Autowired
