@@ -11,233 +11,492 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<!--[if lte IE 8]>
-        	<script src="/resources/css/ie/html5shiv.js"></script>
-		<![endif]-->
-
-		<script src="/resources/js/jquery.min.js"></script>
-		<script src="/resources/js/jquery.poptrox.min.js"></script>
-		<script src="/resources/js/jquery.scrolly.min.js"></script>
-		<script src="/resources/js/jquery.scrollgress.min.js"></script>
-
-		<script src="/resources/js/skel.min.js"></script>
-
-		<script src="/resources/js/init.js"></script>
-
-		<script src="/resources/js/moment.min.js"></script>
-
-		<script src="/resources/js/fullcalendar.js"></script>
-
-		<script src="/resources/js/angular/angular.js"></script>
-		<script src="/resources/js/angular/angular-resources.js"></script>
-		<script src="/resources/js/angular/angular-ui-calendar.js"></script>
-		<script src="/resources/js/angular/ui-bootstrap-tpls-0.12.0.js"></script>
-		<script src="/resources/js/angular/app.js"></script>
-		<script src="/resources/js/angular/controllers.js"></script>
-		<script src="/resources/js/angular/services.js"></script>
-
 
 
 		<link rel="stylesheet" href="/resources/css/fullcalendar.min.css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
-		<noscript>
-			<link rel="stylesheet" href="/resources/css/skel.css" />
-			<link rel="stylesheet" href="/resources/css/style.css" />
-			<link rel="stylesheet" href="/resources/css/style-wide.css" />
-			<link rel="stylesheet" href="/resources/css/style-normal.css" />
-		</noscript>
-		<!--[if lte IE 8]>
-        	<link rel="stylesheet" href="/resources/css/ie/v8.css"/>
-		<![endif]-->
+        <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+        <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/resources/css/flexslider.css" rel="stylesheet" >
+        <link href="/resources/css/styles.css" rel="stylesheet">
+        <link href="/resources/css/queries.css" rel="stylesheet">
+        <link href="/resources/css/animate.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 	</head>
-	<body>
-
-		<!-- Header -->
-			<header id="header">
-
-				<!-- Logo -->
-					<h1 id="logo">Mary Key</h1>
-				
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro">Intro</a></li>
-							<li><a href="#one">What I Do</a></li>
-							<li><a href="#two">Who I Am</a></li>
-							<li><a href="#work">My Work</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</nav>
-
-			</header>
-		<section id="calendar-section" class="main style3 secondary">
-			<div class="content container small" ng-controller="CalendarController">
+	<body id = "top">
 
 
 
-				<div class="" ng-show="alertMessage != undefined && alertMessage != ''">
-					<h4>{{alertMessage}}</h4>
-				</div>
-				<button ng-click="refresh()">odswiez</button>
-				<button type="button" class="btn btn-primary" ng-click="addEvent()">
-					test dodwania
-				</button>
-				<header>
-					<h2>Rezerwacje</h2>
-				</header>
-				<div class="btn-toolbar">
-					<div class="btn-group">
-						<button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar')">Widok tygodniowy</button>
-						<button class="btn btn-success" ng-click="changeView('month','myCalendar')">Widok miesięczny</button>
-					</div>
-				</div>
-				<div class="calendar" ng-model="eventSources" calendar="myCalendar" ui-calendar="uiConfig.calendar"></div>
+        <header id="home">
+            <nav>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                            <nav class="pull">
+                                <ul class="top-nav">
+                                    <li><a href="#intro">O mnie <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                                    <li><a href="#calendar-section">Zapisz sie <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                                    <li><a href="#responsive">Responsive Design <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                                    <li><a href="#portfolio">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                                    <li><a href="#team">Team <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                                    <li><a href="#contact">Get in Touch <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
+            <section class="hero" id="hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-right navicon">
+                            <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center inner">
+                            <h1 class="animated fadeInDown">MARY <span>KAY</span></h1>
+                            <p class="animated fadeInUp delay-05s">A czy Ty nie chcesz być piękna ?</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            <a href="#calendar-section" class="learn-more-btn">Zapisz się na spotkanie !</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
 
-				<script type="text/ng-template" id="rezerwationFormTemplate.html">
-					<div class="modal-header">
-						<h3 class="modal-title">Rezerwacja terminu.</h3>
-					</div>
-					<div class="modal-body">
-						<form name="bookingForm">
-							telefon: <input type="text" name="phone" ng-model="userBooking.phone" required>
-    						<span class="error" ng-show="bookingForm.userBooking.phone.$error.required">Required!</span><br>
-							email <input type="text" name="email" ng-model="userBooking.email" ng-minlength="3" ng-maxlength="10">
-    						<span class="error" ng-show="bookingForm.userBooking.email.$error.email">Proszę podać poprawny email.</span>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-primary" ng-click="ok()">Zapisz się</button>
-						<button class="btn btn-warning" ng-click="cancel()">Anuluj</button>
-					</div>
-				</script>
-			</div>
-
-		</section>
-			
-		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
-				<div class="content container small">
-					<header>
-						<h2>A czy Ty nie chcesz być piękna ?</h2>
-					</header>
-					<p>Jakiś tekst na <strong>zachęte</strong></p>
-					<footer>
-						<a href="#one" class="button style2 down">Więcej</a>
-					</footer>
-				</div>
-			</section>
-		
-		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>What I Do</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, 
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
-				</div>
-				<a href="#two" class="button style2 down anchored">Next</a>
-			</section>
-		
-		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>Who I Am</h2>
-					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, 
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
-				</div>
-				<a href="#work" class="button style2 down anchored">Next</a>
-			</section>
-			
-		<!-- Work -->
-			<section id="work" class="main style3 primary">
-				<div class="content container">
-					<header>
-						<h2>My Work</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. 
-						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis 
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
-					</header>
-					
-					<!-- Lightbox Gallery  -->
-						<div class="container small gallery">
-							<div class="row flush images">
-								<div class="6u"><a href="/resources/images/fulls/01.jpg" class="image fit from-left"><img src="/resources/images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
-								<div class="6u"><a href="/resources/images/fulls/02.jpg" class="image fit from-right"><img src="/resources/images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
-							</div>
-							<div class="row flush images">
-								<div class="6u"><a href="/resources/images/fulls/03.jpg" class="image fit from-left"><img src="/resources/images/thumbs/03.jpg" title="Air Lounge" alt="" /></a></div>
-								<div class="6u"><a href="/resources/images/fulls/04.jpg" class="image fit from-right"><img src="/resources/images/thumbs/04.jpg" title="Carry on" alt="" /></a></div>
-							</div>
-							<div class="row flush images">
-								<div class="6u"><a href="/resources/images/fulls/05.jpg" class="image fit from-left"><img src="/resources/images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a></div>
-								<div class="6u"><a href="/resources/images/fulls/06.jpg" class="image fit from-right"><img src="/resources/images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
-							</div>
-						</div>
-
-				</div>
-			</section>
-
-			
-		<!-- Contact -->
-			<section id="contact" class="main style3 secondary">
-				<div class="content container">
-					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
-					</header>
-					<div class="box container small">
-					
-					<!-- Contact Form -->
-							<form method="post" action="#">
-								<div class="row half">
-									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u"><input type="email" name="email" placeholder="Email" /></div>
-								</div>
-								<div class="row half">
-									<div class="12u"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-								</div>
-								<div class="row">
-									<div class="12u">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-
-					</div>
-				</div>
-			</section>
-			
-		<!-- Footer -->
-			<footer id="footer">
-
-				<!-- Icons -->
-					<ul class="actions">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-						<!--<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-						<!--<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-
-				<!-- Menu -->
-					<ul class="menu">
-						<li>&copy; <a href="http://pepeshka.pl/">Pepeshka</a> </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-			
-			</footer>
+        <section id="calendar-section" class="text-center section-padding">
+            <div class="container" ng-controller="CalendarController">
 
 
 
+                <div class="" ng-show="alertMessage != undefined && alertMessage != ''">
+                    <h4>{{alertMessage}}</h4>
+                </div>
+
+
+                <header>
+                    <h2>Rezerwacje</h2>
+                </header>
+                <!--<div class="btn-toolbar">-->
+                    <!--<div class="btn-group">-->
+                        <!--<button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar')">Widok tygodniowy</button>-->
+                        <!--<button class="btn btn-success" ng-click="changeView('month','myCalendar')">Widok miesięczny</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--</br>-->
+                <div class="calendar" ng-model="eventSources" calendar="myCalendar" ui-calendar="uiConfig.calendar"></div>
+
+                </br>
+                <button class="btn btn-primary" ng-click="refresh()">odswiez</button>
+
+                <script type="text/ng-template" id="rezerwationFormTemplate.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Rezerwacja terminu.</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form name="bookingForm">
+                            telefon: <input type="text" name="phone" ng-model="userBooking.phone" required>
+                            <span class="error" ng-show="bookingForm.userBooking.phone.$error.required">Required!</span><br>
+                            email <input type="text" name="email" ng-model="userBooking.email" ng-minlength="3" ng-maxlength="10">
+                            <span class="error" ng-show="bookingForm.userBooking.email.$error.email">Proszę podać poprawny email.</span>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" ng-click="ok()">Zapisz się</button>
+                        <button class="btn btn-warning" ng-click="cancel()">Anuluj</button>
+                    </div>
+                </script>
+            </div>
+
+        </section>
+
+
+
+        <section class="intro text-center section-padding" id="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 wp1">
+                        <h1 class="arrow">A Creative Portfolio Template</h1>
+                        <p>Sed a lorem quis neque interdum <a href="#">consequat ut sed sem</a>. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent id tempor ipsum. Fusce at massa ac nunc porta fringilla sed eget neque. Quisque quis pretium nulla. Fusce eget bibendum neque, vel volutpat augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="features text-center section-padding" id="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="arrow">Love what you do, and you'll do it well</h1>
+                        <div class="features-wrapper">
+                            <div class="col-md-4 wp2">
+                                <div class="icon">
+                                    <i class="fa fa-laptop shadow"></i>
+                                </div>
+                                <h2>Digital Design</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                                    primis in faucibus.</p>
+                            </div>
+                            <div class="col-md-4 wp2 delay-05s">
+                                <div class="icon">
+                                    <i class="fa fa-code shadow"></i>
+                                </div>
+                                <h2>Web Development</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                                    primis in faucibus.</p>
+                            </div>
+                            <div class="col-md-4 wp2 delay-1s">
+                                <div class="icon">
+                                    <i class="fa fa-heart shadow"></i>
+                                </div>
+                                <h2>Creative Direction</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                                    primis in faucibus.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="text-center" id="responsive">
+            <div class="container-fluid nopadding responsive-services">
+                <div class="wrapper">
+                    <div class="iphone">
+                        <div class="wp3"></div>
+                    </div>
+                    <div class="fluid-white"></div>
+                </div>
+                <div class="container designs">
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-7">
+                            <div id="servicesSlider">
+                                <ul class="slides">
+                                    <li>
+                                        <h1 class="arrow">Responsive Design Specialists</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero. </p>
+                                        <p>
+                                            Mauris ultrices odio vitae nulla ultrices iaculis. Nulla rhoncus odio eu lectus faucibus facilisis. Maecenas ornare augue vitae sollicitudin accumsan. </p>
+                                        <p>Etiam eget libero et erat eleifend consectetur a nec lectus. Sed id tellus lorem. Suspendisse sed venenatis odio, quis lobortis eros.</p>
+                                    </li>
+                                    <li>
+                                        <h1 class="arrow">Bootstrap Professionals</h1>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero. </p>
+                                        <p>
+                                            Mauris ultrices odio vitae nulla ultrices iaculis. Nulla rhoncus odio eu lectus faucibus facilisis. Maecenas ornare augue vitae sollicitudin accumsan. </p>
+                                        <p>Etiam eget libero et erat eleifend consectetur a nec lectus. Sed id tellus lorem. Suspendisse sed venenatis odio, quis lobortis eros.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="swag text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1>I got 99 Problems<span>but <em>design</em> 'aint one</span></h1>
+                        <a href="#portfolio" class="down-arrow-btn"><i class="fa fa-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio text-center section-padding" id="portfolio">
+            <div class="container">
+                <div class="row">
+                    <div id="portfolioSlider">
+                        <ul class="slides">
+                            <li>
+                                <div class="col-md-4 wp4">
+                                    <div class="overlay-effect effects clearfix">
+                                        <div class="img">
+                                            <img src="resources/img/portfolio-01.jpg" alt="Portfolio Item">
+                                            <div class="overlay">
+                                                <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Creative Minds</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                </div>
+                                <div class="col-md-4 wp4 delay-05s">
+                                    <div class="overlay-effect effects clearfix">
+                                        <div class="img">
+                                            <img src="resources/img/portfolio-02.jpg" alt="Portfolio Item">
+                                            <div class="overlay">
+                                                <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Creative Hearts</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                </div>
+                                <div class="col-md-4 wp4 delay-1s">
+                                    <div class="overlay-effect effects clearfix">
+                                        <div class="img">
+                                            <img src="resources/img/portfolio-03.jpg" alt="Portfolio Item">
+                                            <div class="overlay">
+                                                <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Creative Ideas</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="col-md-4 wp4">
+                                    <div class="overlay-effect effects clearfix">
+                                        <div class="img">
+                                            <img src="resources/img/portfolio-01.jpg" alt="Portfolio Item">
+                                            <div class="overlay">
+                                                <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Creative Minds</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                </div>
+                                <div class="col-md-4 wp4 delay-05s">
+                                    <div class="overlay-effect effects clearfix">
+                                        <div class="img">
+                                            <img src="resources/img/portfolio-02.jpg" alt="Portfolio Item">
+                                            <div class="overlay">
+                                                <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Creative Hearts</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                </div>
+                                <div class="col-md-4 wp4 delay-1s">
+                                    <div class="overlay-effect effects clearfix">
+                                        <div class="img">
+                                            <img src="resources/img/portfolio-03.jpg" alt="Portfolio Item">
+                                            <div class="overlay">
+                                                <a href="#" class="expand"><i class="fa fa-search"></i><br>View More</a>
+                                                <a class="close-overlay hidden">x</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2>Creative Ideas</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="ignite-cta text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" class="ignite-btn">Ignite Your Passion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="team text-center section-padding" id="team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="arrow">We're a team that adore what we do</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="team-wrapper">
+                        <div id="teamSlider">
+                            <ul class="slides">
+                                <li>
+                                    <div class="col-md-4 wp5">
+                                        <img src="resources/img/team-01.png" alt="Team Member">
+                                        <h2>Jon Snow</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                        <div class="social">
+                                            <ul class="social-buttons">
+                                                <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 wp5 delay-05s">
+                                        <img src="resources/img/team-02.png" alt="Team Member">
+                                        <h2>Cersei Lannister</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                        <div class="social">
+                                            <ul class="social-buttons">
+                                                <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 wp5 delay-1s">
+                                        <img src="resources/img/team-03.png" alt="Team Member">
+                                        <h2>Jamie Lannister</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                        <div class="social">
+                                            <ul class="social-buttons">
+                                                <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-4 wp5">
+                                        <img src="resources/img/team-01.png" alt="Team Member">
+                                        <h2>Jon Snow</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                        <div class="social">
+                                            <ul class="social-buttons">
+                                                <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 wp5 delay-05s">
+                                        <img src="resources/img/team-02.png" alt="Team Member">
+                                        <h2>Cersei Lannister</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                        <div class="social">
+                                            <ul class="social-buttons">
+                                                <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 wp5 delay-1s">
+                                        <img src="resources/img/team-03.png" alt="Team Member">
+                                        <h2>Jamie Lannister</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                                        <div class="social">
+                                            <ul class="social-buttons">
+                                                <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="subscribe text-center">
+            <div class="container">
+                <h1><i class="fa fa-paper-plane"></i><span>Subscribe to stay in the loop</span></h1>
+                <form action="#">
+                    <input type="text" name="" value="" placeholder="" required>
+                    <input type="submit" name="" value="Send">
+                </form>
+            </div>
+        </section>
+        <section class="dark-bg text-center section-padding contact-wrap" id="contact">
+            <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="arrow">Drop us a line</h1>
+                    </div>
+                </div>
+                <div class="row contact-details">
+                    <div class="col-md-4">
+                        <div class="light-box box-hover">
+                            <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
+                            <p>Level 6, 23 Pitt St, Sydney</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="light-box box-hover">
+                            <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
+                            <p>+61 9 211 3747</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="light-box box-hover">
+                            <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
+                            <p><a href="#">hey@halcyondays.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="social-buttons">
+                            <li><a href="#" class="social-btn"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="social-btn"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="legals">
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="#">Legals</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 credit">
+                        <p>Designed &amp; Developed by <a href="http://www.peterfinlan.com/">Peter Finlan</a> exclusively for <a href="http://tympanus.net/codrops/"><em>Codrops</em></a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+        <script src="/resources/js/calendar/moment.min.js"></script>
+
+        <script src="/resources/js/calendar/fullcalendar.js"></script>
+        <script src="/resources/js/calendar/pl.js"></script>
+
+        <script src="/resources/js/angular/angular.js"></script>
+        <script src="/resources/js/angular/angular-resources.js"></script>
+        <script src="/resources/js/angular/angular-ui-calendar.js"></script>
+        <script src="/resources/js/angular/ui-bootstrap-tpls-0.12.0.js"></script>
+        <script src="/resources/js/angular/app.js"></script>
+        <script src="/resources/js/angular/controllers.js"></script>
+        <script src="/resources/js/angular/services.js"></script>
+
+
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/resources/js/waypoints.min.js"></script>
+        <script src="/resources/js/bootstrap.min.js"></script>
+        <script src="/resources/js/scripts.js"></script>
+        <script src="/resources/js/jquery.flexslider.js"></script>
+        <script src="/resources/js/modernizr.js"></script>
 
 		<!--<script src="/resources/js/newrelic.js"></script>-->
 

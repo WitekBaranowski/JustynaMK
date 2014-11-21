@@ -16,7 +16,20 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
     };
     /* event source that contains custom events on the scope */
     $scope.events = [
-        {title: 'All Day Event',start: new Date(y, m, 1)},
+        {
+            start: '2014-11-24',
+            end: '2014-11-28',
+            overlap: false,
+            rendering: 'background',
+            color: '#ff9f89'
+        },
+        {
+            start: '2014-11-06',
+            end: '2014-11-08',
+            overlap: false,
+            rendering: 'background',
+            color: '#ff9f89'
+        }
 
 
     ];
@@ -127,6 +140,7 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
     $scope.uiConfig = {
         calendar:{
             defaultView: 'agendaWeek',
+            lang: 'pl',
             editable: true,
             selectable: true,
             selectHelper: true,
@@ -139,7 +153,19 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
             eventDrop: $scope.alertOnDrop,
             eventResize: $scope.alertOnResize,
             eventRender: $scope.eventRender,
-            select: $scope.select
+            select: $scope.select,
+//            businessHours:{
+//                start: '8:00', // a start time (10am in this example)
+//                end: '22:00', // an end time (6pm in this example)
+//
+//                dow: [ 1, 2, 3, 4 ]
+//                // days of week. an array of zero-based day of week integers (0=Sunday)
+//                // (Monday-Thursday in this example)
+//            } ,
+            minTime: "8:00",
+            maxTime: "22:00",
+            allDaySlot: false
+
 
         }
     };

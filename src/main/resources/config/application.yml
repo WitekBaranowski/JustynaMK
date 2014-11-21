@@ -8,21 +8,3 @@ spring:
 
 
 
-
-
-
-
-
-#
-#
-#
-#
-#---
-#spring:
-#    profiles: production
-#jdbc:
-#  username: systemEnvironment['HOME']
-#  password: systemEnvironment['HOME']
-#  url: systemEnvironment['HOME']
-
-

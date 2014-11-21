@@ -28,6 +28,8 @@ public class BookingDTO {
     private LocalDateTime end;
     private String className;
 
+    private boolean overlap = false;
+
     private ReservationStatus status;
 
     private boolean editable;
@@ -106,5 +108,13 @@ public class BookingDTO {
     @JsonProperty
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public boolean isOverlap() {
+        return overlap;
+    }
+
+    public void setOverlap(boolean overlap) {
+        this.overlap = overlap;
     }
 }
