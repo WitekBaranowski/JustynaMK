@@ -5,8 +5,8 @@
 marykayApp.factory('BookingService', function ($log, $http) {
     return {
         book: function (booking) {
-            booking.start = new Date(booking.start).getTime();
-            booking.end =  new Date(booking.end).getTime();
+            booking.start = booking.start.utc().valueOf();
+            booking.end =  booking.end.utc().valueOf();
             return $http.post('booking', booking).then(function (response) {
                 return response.data;
             });
@@ -18,9 +18,9 @@ marykayApp.factory('BookingService', function ($log, $http) {
             });
         },
         findByDates: function (fromDate, toDate) {
-            return $http.get('booking',
+            return $http.get('booking/byDates',
                 {
-                    params: {fromDate: fromDate, toDate: toDate}
+                    params: {fromDate: fromDate.utc().format(), toDate: toDate.utc().format()}
                 }).then(function (response) {
                     return response.data;
                 });

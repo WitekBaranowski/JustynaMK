@@ -3,7 +3,8 @@ package pl.digitaldream.justynamk.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.joda.time.LocalDateTime;
+import org.joda.time.DateTime;
+import org.joda.time.DateTime;
 import pl.digitaldream.justynamk.domain.enums.ReservationStatus;
 
 import javax.validation.constraints.NotNull;
@@ -22,10 +23,10 @@ public class BookingDTO {
     private String phone;
 
     @NotNull
-    private LocalDateTime start;
+    private DateTime start;
 
     @NotNull
-    private LocalDateTime end;
+    private DateTime end;
     private String className;
 
     private boolean overlap = false;
@@ -42,19 +43,19 @@ public class BookingDTO {
         this.title = title;
     }
 
-    public LocalDateTime getStart() {
+    public DateTime getStart() {
         return start;
     }
 
-    public void setStart(LocalDateTime start) {
+    public void setStart(DateTime start) {
         this.start = start;
     }
 
-    public LocalDateTime getEnd() {
+    public DateTime getEnd() {
         return end;
     }
 
-    public void setEnd(LocalDateTime end) {
+    public void setEnd(DateTime end) {
         this.end = end;
     }
 

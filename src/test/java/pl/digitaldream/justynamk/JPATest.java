@@ -1,7 +1,7 @@
 package pl.digitaldream.justynamk;
 
 
-import org.joda.time.LocalDateTime;
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,15 +54,15 @@ public class JPATest {
         Booking b1 = new Booking();
         b1.setEmail("test@tes2.pl");
         b1.setPhone("663-495-345");
-        b1.setReservationEnd(new LocalDateTime());
-        b1.setReservationStart(new LocalDateTime().minusDays(5));
+        b1.setReservationEnd(new DateTime());
+        b1.setReservationStart(new DateTime().minusDays(5));
         b1.setStatus(ReservationStatus.PENDING);
 
         Booking b2 = new Booking();
         b2.setEmail("test2@tes2.pl");
         b2.setPhone("663-495-34545");
-        b2.setReservationEnd(new LocalDateTime());
-        b2.setReservationStart(new LocalDateTime().minusDays(2));
+        b2.setReservationEnd(new DateTime());
+        b2.setReservationStart(new DateTime().minusDays(2));
         b2.setStatus(ReservationStatus.CONFIRMED);
 
         bookingRepository.save(b1);

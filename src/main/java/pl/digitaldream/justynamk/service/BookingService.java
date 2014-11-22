@@ -1,6 +1,7 @@
 package pl.digitaldream.justynamk.service;
 
 
+import org.joda.time.DateTime;
 import pl.digitaldream.justynamk.dto.BookingDTO;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 
 public interface BookingService {
     public List<BookingDTO> findAll();
+    public List<BookingDTO> findByDates(DateTime fromDate, DateTime toDate);
     public BookingDTO findOne(Integer id);
 
     public BookingDTO save(BookingDTO booking);

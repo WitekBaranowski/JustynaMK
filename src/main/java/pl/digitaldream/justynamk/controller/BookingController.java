@@ -1,19 +1,17 @@
 package pl.digitaldream.justynamk.controller;
 
 
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import pl.digitaldream.justynamk.domain.Booking;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import pl.digitaldream.justynamk.domain.enums.ReservationStatus;
 import pl.digitaldream.justynamk.dto.BookingDTO;
-import pl.digitaldream.justynamk.repository.BookingRepository;
 import pl.digitaldream.justynamk.service.BookingService;
+import pl.digitaldream.justynamk.web.propertyeditor.DateTimeEditor;
 
 import javax.validation.Valid;
 
@@ -33,10 +31,22 @@ public class BookingController {
     @Autowired
     private BookingService bookingService;
 
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(DateTime.class, new DateTimeEditor(false));
+    }
+
+
     @RequestMapping(method = GET)
     public ResponseEntity<List<BookingDTO>> findAll() {
         return new ResponseEntity<>(bookingService.findAll(), OK);
     }
+    @RequestMapping(method = GET, value = "/byDates")
+    public ResponseEntity<List<BookingDTO>> findByDates(@RequestParam  DateTime fromDate,
+                                                        @RequestParam  DateTime toDate) {
+        return new ResponseEntity<>(bookingService.findByDates(fromDate, toDate), OK);
+    }
+
 
     @RequestMapping(method = GET, value = "/{id}")
     public ResponseEntity<BookingDTO> get(@PathVariable(value = "id") Integer id) {

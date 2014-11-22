@@ -2,8 +2,9 @@ package pl.digitaldream.justynamk.domain;
 
 
 import org.hibernate.annotations.Type;
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
+import org.joda.time.DateTime;
 import pl.digitaldream.justynamk.domain.enums.ReservationStatus;
 
 import javax.persistence.*;
@@ -16,9 +17,9 @@ public class Booking implements Serializable{
 
     private Integer id;
 
-    private LocalDateTime reservationStart;
+    private DateTime reservationStart;
 
-    private LocalDateTime reservationEnd;
+    private DateTime reservationEnd;
 
     private String email;
 
@@ -39,21 +40,21 @@ public class Booking implements Serializable{
     }
 
 
-    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime")
-    public LocalDateTime getReservationStart() {
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    public DateTime getReservationStart() {
         return reservationStart;
     }
 
-    public void setReservationStart(LocalDateTime reservationStart) {
+    public void setReservationStart(DateTime reservationStart) {
         this.reservationStart = reservationStart;
     }
 
-    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime")
-    public LocalDateTime getReservationEnd() {
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
+    public DateTime getReservationEnd() {
         return reservationEnd;
     }
 
-    public void setReservationEnd(LocalDateTime reservationEnd) {
+    public void setReservationEnd(DateTime reservationEnd) {
         this.reservationEnd = reservationEnd;
     }
 

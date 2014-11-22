@@ -27,7 +27,7 @@ public class ObjectMapperConfig {
             objectMapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS,true);
         }
         objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-        objectMapper.configure(DeserializationFeature.ADJUST_DATES_TO_CONTEXT_TIME_ZONE, false);
+
         return objectMapper;
     }
 

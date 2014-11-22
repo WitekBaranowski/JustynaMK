@@ -1,5 +1,6 @@
 package pl.digitaldream.justynamk.service.impl;
 
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +35,12 @@ public class StandardBookingService implements BookingService{
     @Override
     public List<BookingDTO> findAll() {
         List<Booking> bookings = repository.findAll();
+        return mapper.mapToDTO(bookings);
+    }
+
+    @Override
+    public List<BookingDTO> findByDates(DateTime fromDate, DateTime toDate) {
+        List<Booking> bookings = repository.findByDates(fromDate, toDate);
         return mapper.mapToDTO(bookings);
     }
 
