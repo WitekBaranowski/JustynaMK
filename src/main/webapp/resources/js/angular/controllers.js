@@ -3,11 +3,6 @@
 /* Controllers */
 
 marykayApp.controller('CalendarController', function($modal, $log, $scope,$compile,uiCalendarConfig, BookingService){
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-
     /* event source that pulls from google.com */
     $scope.eventSource = {
         //url: "http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic",
@@ -33,27 +28,19 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
 
 
     ];
-    /* event source that calls a function on every view switch */
-    $scope.eventsF = function (start, end, timezone, callback) {
 
+    $scope.eventsF = function (start, end, timezone, callback) {
 
         BookingService.findByDates(start, end).then(function(data){
             var events = [];
             data.map( function(booking) {
                 events.push(booking);
             });
-            $log.info(events);
+            $log.info("find dates");
             callback(events);
 
         });
 
-
-
-        //var s = new Date(start).getTime() / 1000;
-        //var e = new Date(end).getTime() / 1000;
-        //var m = new Date(start).getMonth();
-        //var events = [{title: 'Feed Me ' + m,start: s + (50000),end: s + (100000),allDay: false, className: ['customFeed']}];
-        //callback(events);
     };
 
     $scope.calEventsExt = {
@@ -97,20 +84,19 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
     };
     /* remove event */
     $scope.remove = function(index) {
-        $log.info(index+"removing");
+        $log.info(index+" removing");
         $scope.events.splice(index,1);
     };
 
 
-    /* Change View */
     $scope.changeView = function(view,calendar) {
-        $log.info($scope.bookings);
+        $log.info("changing view");
         uiCalendarConfig.calendars[calendar].fullCalendar('changeView',view);
     };
-    /* Change View */
+
     $scope.renderCalender = function(calendar) {
         if(uiCalendarConfig.calendars[calendar]){
-            $log.info($scope.bookings);
+            $log.info("rendering");
             uiCalendarConfig.calendars[calendar].fullCalendar('render');
         }
     };
@@ -121,7 +107,6 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
         var modalInstance = $modal.open({
             templateUrl: 'rezerwationFormTemplate.html',
             controller: 'ModalAddBooking',
-            //size: size,
             resolve: {
                 start:  function () {
                     return $scope.start;
@@ -144,13 +129,13 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
 
     };
 
-    /* Render Tooltip */
+
     $scope.eventRender = function( event, element, view ) {
         element.attr({'tooltip': event.title,
             'tooltip-append-to-body': true});
         $compile(element)($scope);
     };
-    /* config object */
+
     $scope.uiConfig = {
         calendar:{
             defaultView: 'agendaWeek',
@@ -185,17 +170,13 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
         }
     };
 
-
-    //$scope.bookings = [];
-    //
     $scope.refresh = function() {
-
-            uiCalendarConfig.calendars['myCalendar'].fullCalendar('refetchEvents');
+        $log.info("refresh events !");
+        uiCalendarConfig.calendars['myCalendar'].fullCalendar('refetchEvents');
 
 
     };
-    //$scope.refresh();
-    /* event sources array*/
+
     $scope.eventSources = [$scope.events, $scope.eventsF];
 
 

@@ -27,6 +27,7 @@ public class StandardBookingService implements BookingService{
     public void setRepository(BookingRepository repository) {
         this.repository = repository;
     }
+
     @Autowired
     public void setMapper(BookingMapper mapper) {
         this.mapper = mapper;
