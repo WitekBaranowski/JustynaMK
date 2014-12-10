@@ -3,8 +3,7 @@ package pl.digitaldream.justynamk.domain;
 
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
-import org.joda.time.DateTime;
+
 import pl.digitaldream.justynamk.domain.enums.ReservationStatus;
 
 import javax.persistence.*;

@@ -18,4 +18,6 @@ public interface UserRepository extends JpaRepository<User, String> {
     User getUserByActivationKey(String activationKey);
 
     List<User> findByLastName(String lastName);
+
+    List<User> findByLogin(String login);
 }

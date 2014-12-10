@@ -37,38 +37,54 @@ public class JPATest {
     BookingRepository bookingRepository;
 
     @Test
-    public void sampleTestCase() {
-        User dave = new User();
-        dave.setLogin("daveo");
-        dave.setFirstName("dave");
-        dave.setLastName("justynamk");
+    public void testSaveNewUser() {
+        User user = new User();
+        user.setLogin("justynamk");
+        user.setFirstName("Justyna");
+        user.setLastName("Nowak");
 
-        dave = repository.save(dave);
 
-        List<User> result = repository.findByLastName("justynamk");
+        user = repository.save(user);
+        List<User> result = repository.findByLogin("justynamk");
+
+
         assertThat(result).hasSize(1);
-        assertThat(result).contains(dave);
+        assertThat(result).contains(user);
     }
     @Test
-    public void bookingTest() {
-        Booking b1 = new Booking();
-        b1.setEmail("test@tes2.pl");
-        b1.setPhone("663-495-345");
-        b1.setReservationEnd(new DateTime());
-        b1.setReservationStart(new DateTime().minusDays(5));
-        b1.setStatus(ReservationStatus.PENDING);
+    public void testSavePendingBooking() {
+        Booking booking = prepareBasicBooking();
+        booking.setStatus(ReservationStatus.PENDING);
 
-        Booking b2 = new Booking();
-        b2.setEmail("test2@tes2.pl");
-        b2.setPhone("663-495-34545");
-        b2.setReservationEnd(new DateTime());
-        b2.setReservationStart(new DateTime().minusDays(2));
-        b2.setStatus(ReservationStatus.CONFIRMED);
-
-        bookingRepository.save(b1);
-
-        bookingRepository.save(b2);
+        booking = bookingRepository.save(booking);
+        assertThat(bookingRepository.exists(booking.getId()));
 
 
     }
+    @Test
+    public void testUpdateToConfirmedBooking() {
+
+        Booking booking = prepareBasicBooking();
+        booking.setStatus(ReservationStatus.PENDING);
+        booking = bookingRepository.save(booking);
+
+        booking.setStatus(ReservationStatus.CONFIRMED);
+        bookingRepository.save(booking);
+        booking = bookingRepository.getOne(booking.getId());
+
+        assertThat(booking.getStatus()).isEqualTo(ReservationStatus.CONFIRMED);
+
+
+    }
+
+    private Booking prepareBasicBooking() {
+        Booking booking = new Booking();
+        booking.setId(1);
+        booking.setEmail("test@tes2.pl");
+        booking.setPhone("663-495-345");
+        booking.setReservationEnd(new DateTime());
+        booking.setReservationStart(new DateTime().minusDays(5));
+        return booking;
+    }
+
 }
