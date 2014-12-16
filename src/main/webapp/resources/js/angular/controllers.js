@@ -78,10 +78,7 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
             sources.push(source);
         }
     };
-    /* add custom event*/
-    $scope.addEvent = function(booking) {
-        $scope.events.push(booking);
-    };
+
     /* remove event */
     $scope.remove = function(index) {
         $log.info(index+" removing");
@@ -121,7 +118,7 @@ marykayApp.controller('CalendarController', function($modal, $log, $scope,$compi
 
         modalInstance.result.then(function (booking) {
             $log.info('newBooking ' + JSON.stringify(booking));
-            $scope.addEvent(booking);
+            $scope.refresh();
         }, function () {
             $log.info('Modal dismissed at: ' + new Date());
         });
